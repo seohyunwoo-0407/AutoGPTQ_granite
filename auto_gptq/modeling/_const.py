@@ -25,7 +25,10 @@ SUPPORTED_MODELS = [
     "stablelm_epoch",
     "mpt",
     "cohere",
-    "minicpm3"
+    "minicpm3",
+    "olmoe",
+    "granite",
+    "granitemoe",
 ]
 if compare_transformers_version("v4.28.0", op="ge"):
     SUPPORTED_MODELS.append("llama")
