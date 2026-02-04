@@ -19,6 +19,7 @@ from .longllama import LongLlamaGPTQForCausalLM
 from .mistral import MistralGPTQForCausalLM
 from .mixtral import MixtralGPTQForCausalLM
 from .moss import MOSSGPTQForCausalLM
+from .olmoe import OlmoeGPTQForCausalLM
 from .mpt import MPTGPTQForCausalLM
 from .opt import OPTGPTQForCausalLM
 from .phi import PhiGPTQForCausalLM
@@ -30,6 +31,7 @@ from .starcoder2 import Starcoder2GPTQForCausalLM
 from .xverse import XverseGPTQForCausalLM
 from .yi import YiGPTQForCausalLM
 from .minicpm3 import MiniCPM3GPTQForCausalLM
+from .granite import GraniteGPTQForCausalLM
 
 
 GPTQ_CAUSAL_LM_MODEL_MAP = {
@@ -63,6 +65,9 @@ GPTQ_CAUSAL_LM_MODEL_MAP = {
     "gemma2": Gemma2GPTQForCausalLM,
     "phi": PhiGPTQForCausalLM,
     "mpt": MPTGPTQForCausalLM,
+    "olmoe": OlmoeGPTQForCausalLM,
+    "granite": GraniteGPTQForCausalLM,
+    "granitemoe": GraniteGPTQForCausalLM,
 }
 
 
