@@ -38,6 +38,10 @@ class GPTQ:
         if len(inp.shape) == 2:
             inp = inp.unsqueeze(0)
         tmp = inp.shape[0]
+        # MoE expert별 Linear에서는 tmp가 0인 경우가 자주 발생(해당 expert에 토큰이 배정되지 않음).
+        # 이 경우 nsamples 업데이트/정규화에서 0으로 나누며 NaN이 생기므로 그냥 스킵한다.
+        if tmp == 0:
+            return
         if isinstance(self.layer, nn.Linear) or isinstance(self.layer, transformers.Conv1D):
             if len(inp.shape) == 3:
                 inp = inp.reshape((-1, inp.shape[-1]))
